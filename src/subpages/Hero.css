@@ -79,10 +79,29 @@
   box-shadow: 0 4px 14px rgba(0, 168, 89, 0.3);
 }
 
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: #009c4f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 168, 89, 0.25);
+}
+
 .btn-secondary {
   background-color: var(--white);
   color: var(--text-dark);
   border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid rgba(0, 168, 89, 0.3);
+  outline-offset: 4px;
 }
 
 .hero-features {

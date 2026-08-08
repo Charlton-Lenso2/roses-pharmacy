@@ -48,45 +48,6 @@ function WhatsAppIcon() {
   );
 }
 
-function ClockIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="14"
-      height="14"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-      <path
-        d="M12 7v5.5l3.5 2"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function PinIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="14"
-      height="14"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      />
-      <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -152,7 +113,7 @@ export default function Navbar() {
             </a>
             <a className="navbar__cta" href={`tel:${PHONE_PRIMARY_HREF}`}>
               <PhoneIcon />
-              Call Now
+              <span>Call Now</span>
             </a>
           </div>
 
