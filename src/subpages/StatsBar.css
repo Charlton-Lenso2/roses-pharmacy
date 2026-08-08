@@ -1,7 +1,7 @@
 :root {
   --brand-rose: #e10078;
   --brand-green: #00a859;
-  --bg-tint: #f0fdf4; 
+  --bg-tint: #f0fdf4;
   --text-dark: #0f172a;
   --text-gray: #64748b;
   --white: #ffffff;
@@ -31,7 +31,9 @@
   background-color: var(--white);
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .stat-card:hover {
@@ -43,7 +45,7 @@
   width: 54px;
   height: 54px;
   min-width: 54px;
-  background-color: rgba(225, 0, 120, 0.08); 
+  background-color: rgba(225, 0, 120, 0.08);
   color: var(--brand-rose);
   border-radius: 12px;
   display: flex;
@@ -71,6 +73,11 @@
   font-weight: 800;
   color: var(--text-dark);
   line-height: 1.1;
+}
+
+.count-up-text {
+  display: inline-block;
+  min-width: 3.2rem;
 }
 
 .stat-label {

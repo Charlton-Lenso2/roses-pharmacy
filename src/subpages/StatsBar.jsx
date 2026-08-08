@@ -1,4 +1,5 @@
 import React from "react";
+import CountUp from "./CountUp";
 import "./StatsBar.css";
 
 const StatsBar = () => {
@@ -18,7 +19,8 @@ const StatsBar = () => {
           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       ),
-      count: "1,000+",
+      value: 1000,
+      suffix: "+",
       label: "Happy Patients Served",
     },
     {
@@ -33,7 +35,8 @@ const StatsBar = () => {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       ),
-      count: "100%",
+      value: 100,
+      suffix: "%",
       label: "Genuine Medicines",
     },
     {
@@ -49,7 +52,8 @@ const StatsBar = () => {
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
         </svg>
       ),
-      count: "10+",
+      value: 10,
+      suffix: "+",
       label: "Healthcare Services",
     },
     {
@@ -65,7 +69,8 @@ const StatsBar = () => {
           <polyline points="12 6 12 12 16 14" />
         </svg>
       ),
-      count: "12 Hrs",
+      value: 12,
+      suffix: " Hrs",
       label: "Open Daily (8am - 8pm)",
     },
   ];
@@ -77,7 +82,18 @@ const StatsBar = () => {
           <div key={item.id} className="stat-card">
             <div className="stat-icon">{item.icon}</div>
             <div className="stat-info">
-              <h3 className="stat-count">{item.count}</h3>
+              <h3 className="stat-count">
+                <CountUp
+                  from={0}
+                  to={item.value}
+                  separator=","
+                  direction="up"
+                  duration={1.8}
+                  className="count-up-text"
+                  delay={0.2}
+                />
+                {item.suffix}
+              </h3>
               <p className="stat-label">{item.label}</p>
             </div>
           </div>
