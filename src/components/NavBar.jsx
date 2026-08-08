@@ -92,42 +92,25 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (scrolled) {
+      setMenuOpen(false);
+    }
     return () => {
       document.body.style.overflow = "";
     };
-  }, [menuOpen]);
+  }, [menuOpen, scrolled]);
 
   return (
     <header className={`navbar-wrap ${scrolled ? "is-scrolled" : ""}`}>
-
-      <div className="nav-utility">
-        <div className="nav-utility__inner">
-          <span className="nav-utility__item">
-            <PinIcon />2 Gwatidzo Street, Mbare National, Harare
-          </span>
-          <span className="nav-utility__item">
-            <ClockIcon />
-            Open Daily · 8:00 AM - 8:00 PM
-          </span>
-          <a
-            className="nav-utility__item nav-utility__item--link"
-            href={`tel:${PHONE_PRIMARY_HREF}`}
-          >
-            <PhoneIcon />
-            {PHONE_PRIMARY}
-          </a>
-        </div>
-      </div>
-
-      <nav className="navbar" aria-label="Primary">
+      <nav className="navbar" aria-label="Primary navigation">
         <div className="navbar__inner">
           <NavLink
             to="/"
@@ -148,6 +131,7 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `navbar__link ${isActive ? "is-active" : ""}`
                   }
+                  onClick={() => setMenuOpen(false)}
                 >
                   <span className="navbar__link-bloom" aria-hidden="true" />
                   {link.label}
@@ -177,7 +161,7 @@ export default function Navbar() {
             className={`navbar__burger ${menuOpen ? "is-open" : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => setMenuOpen((open) => !open)}
           >
             <span />
             <span />
@@ -186,11 +170,10 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu panel */}
       <div className={`navbar__mobile ${menuOpen ? "is-open" : ""}`}>
         <ul className="navbar__mobile-links">
-          {NAV_LINKS.map((link, i) => (
-            <li key={link.to} style={{ transitionDelay: `${i * 40}ms` }}>
+          {NAV_LINKS.map((link, index) => (
+            <li key={link.to} style={{ transitionDelay: `${index * 40}ms` }}>
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
@@ -212,10 +195,10 @@ export default function Navbar() {
             <PhoneIcon /> {PHONE_PRIMARY}
           </a>
           <span className="navbar__mobile-info-item">
-            <ClockIcon /> Open Daily · 8:00 AM – 8:00 PM
+            Open Daily · 8:00 AM - 8:00 PM
           </span>
           <span className="navbar__mobile-info-item">
-            <PinIcon /> 2 Gwatidzo Street, Mbare National, Harare
+            2 Gwatidzo Street, Mbare National, Harare
           </span>
         </div>
 
@@ -236,14 +219,6 @@ export default function Navbar() {
           </a>
         </div>
       </div>
-
-      <button
-        type="button"
-        className={`navbar__backdrop ${menuOpen ? "is-open" : ""}`}
-        aria-hidden="true"
-        tabIndex={-1}
-        onClick={() => setMenuOpen(false)}
-      />
     </header>
   );
 }

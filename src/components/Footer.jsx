@@ -132,15 +132,6 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer__seam" aria-hidden="true">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-          <path
-            d="M0,32 C240,60 480,4 720,20 C960,36 1200,58 1440,24 L1440,60 L0,60 Z"
-            fill="var(--wine-900)"
-          />
-        </svg>
-      </div>
-
       <div className="footer__main">
         <div className="footer__grid">
           <div className="footer__col footer__col--brand">

@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Hero from "../subpages/Hero";
+import AboutSection from "../subpages/AboutSection";
+import StatsBar from "../subpages/StatsBar";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <Hero />
+      <AboutSection />
+      <StatsBar />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

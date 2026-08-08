@@ -1,0 +1,93 @@
+:root {
+  --brand-rose: #e10078;
+  --brand-green: #00a859;
+  --bg-tint: #f0fdf4; 
+  --text-dark: #0f172a;
+  --text-gray: #64748b;
+  --white: #ffffff;
+}
+
+.stats-bar-section {
+  background-color: var(--bg-tint);
+  padding: 48px 24px;
+  border-top: 1px solid rgba(0, 168, 89, 0.1);
+  border-bottom: 1px solid rgba(0, 168, 89, 0.1);
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 168, 89, 0.12);
+}
+
+.stat-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  background-color: rgba(225, 0, 120, 0.08); 
+  color: var(--brand-rose);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.stat-card:nth-child(even) .stat-icon {
+  background-color: rgba(0, 168, 89, 0.1);
+  color: var(--brand-green);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-count {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+@media (max-width: 992px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
