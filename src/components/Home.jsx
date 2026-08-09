@@ -3,6 +3,8 @@ import Hero from "../subpages/Hero";
 import AboutSection from "../subpages/AboutSection";
 import StatsBar from "../subpages/StatsBar";
 import ServicesSection from "../subpages/ServicesSection";
+import WhyChooseUs from "../subpages/WhyChooseUs";
+import PrescriptionCTA from "../subpages/PrescriptionCTA";
 
 function Home() {
   return (
@@ -10,7 +12,9 @@ function Home() {
       <Hero />
       <AboutSection />
       <StatsBar />
-      <ServicesSection/>
+      <ServicesSection />
+      <WhyChooseUs />
+      <PrescriptionCTA />
     </div>
   );
 }
