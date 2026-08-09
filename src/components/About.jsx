@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./About.css";
 
 function ArrowRightIcon() {
@@ -86,21 +87,21 @@ export default function About() {
   return (
     <div className="about-page">
       <section className="about-hero">
-        <div className="about-hero__container">
-          <h1 className="about-hero__title">Where Care Meets Convenience.</h1>
-          <p className="about-hero__subtitle">
+        <div className="about-hero-container">
+          <h1 className="about-hero-title">Where Care Meets Convenience.</h1>
+          <p className="about-hero-subtitle">
             Our simplified solutions ensure you manage your health and
             medications effortlessly and effectively.
           </p>
 
-          <div className="about-hero__media-wrapper">
-            <div className="about-hero__image-card">
+          <div className="about-hero-media-wrapper">
+            <div className="about-hero-image-card">
               <img
                 src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&q=80&w=1200"
                 alt="Roses Pharmacy team assisting patient"
               />
-              <div className="about-hero__badge">
-                <div className="about-hero__badge-icon">+</div>
+              <div className="about-hero-badge">
+                <div className="about-hero-badge-icon">+</div>
                 <p>Trusted care</p>
               </div>
             </div>
@@ -109,10 +110,10 @@ export default function About() {
       </section>
 
       <section className="about-intro" id="intro">
-        <div className="about-intro__container">
-          <div className="about-intro__text">
+        <div className="about-intro-container">
+          <div className="about-intro-text">
             <span className="section-badge-pill">Your Partner In Health</span>
-            <h2 className="about-intro__heading">Roses Pharmacy</h2>
+            <h2 className="about-intro-heading">Roses Pharmacy</h2>
             <p>
               Experience a wide range of unique pharmacy services designed to
               enhance your well-being. We go beyond dispensing prescriptions by
@@ -125,7 +126,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="about-intro__graphic">
+          <div className="about-intro-graphic">
             <div className="curved-photo-frame">
               <img
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800"
@@ -137,27 +138,27 @@ export default function About() {
       </section>
 
       <section className="about-services-banner">
-        <div className="about-services-banner__container">
+        <div className="about-services-banner-container">
           <span className="section-badge-light">What We Offer</span>
-          <h2 className="about-services-banner__title">
+          <h2 className="about-services-banner-title">
             Our Available Services
           </h2>
 
-          <div className="about-services-banner__grid">
+          <div className="about-services-banner-grid">
             {SERVICES_PREVIEW.map((item) => (
               <div key={item.id} className="service-preview-card">
-                <div className="service-preview-card__thumb">
+                <div className="service-preview-card-thumb">
                   <img src={item.img} alt={item.title} />
                 </div>
-                <h3 className="service-preview-card__title">{item.title}</h3>
-                <p className="service-preview-card__desc">{item.desc}</p>
-                <a
-                  href="/services"
-                  className="service-preview-card__action circle-action-btn circle-action-btn--light"
+                <h3 className="service-preview-card-title">{item.title}</h3>
+                <p className="service-preview-card-desc">{item.desc}</p>
+                <NavLink
+                  to="/services"
+                  className="service-preview-card-action circle-action-btn circle-action-btn--light"
                   aria-label={`View ${item.title}`}
                 >
                   <ArrowRightIcon />
-                </a>
+                </NavLink>
               </div>
             ))}
           </div>
@@ -165,8 +166,8 @@ export default function About() {
       </section>
 
       <section className="about-mission">
-        <div className="about-mission__container">
-          <div className="about-mission__graphic">
+        <div className="about-mission-container">
+          <div className="about-mission-graphic">
             <div className="curved-photo-frame curved-photo-frame--left">
               <img
                 src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&q=80&w=800"
@@ -175,11 +176,11 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about-mission__text">
+          <div className="about-mission-text">
             <span className="section-badge-pill">
               Committed To Your Well-Being
             </span>
-            <h2 className="about-mission__heading">Our Mission Statement</h2>
+            <h2 className="about-mission-heading">Our Mission Statement</h2>
             <p>
               We are committed to delivering exceptional service and
               personalized care to each of our customers. Our goal is to provide
@@ -198,15 +199,15 @@ export default function About() {
       </section>
 
       <section className="about-quick-actions">
-        <div className="about-quick-actions__container">
+        <div className="about-quick-actions-container">
           <a
             href="https://wa.me/263780035227?text=Hi,%20I'd%20like%20to%20transfer%20my%20prescription"
             className="action-banner-card"
           >
-            <div className="action-banner-card__icon">
+            <div className="action-banner-card-icon">
               <PrescriptionIcon />
             </div>
-            <div className="action-banner-card__info">
+            <div className="action-banner-card-info">
               <h3>Transfer Prescription</h3>
               <p>
                 Easily transfer your medical prescription to Roses Pharmacy.
@@ -218,10 +219,10 @@ export default function About() {
             href="https://wa.me/263780035227?text=Hi,%20I'd%20like%20to%20refill%20my%20prescription"
             className="action-banner-card"
           >
-            <div className="action-banner-card__icon">
+            <div className="action-banner-card-icon">
               <RefillIcon />
             </div>
-            <div className="action-banner-card__info">
+            <div className="action-banner-card-info">
               <h3>Refill Prescription</h3>
               <p>Quickly order refills and pick them up or request delivery.</p>
             </div>

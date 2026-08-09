@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Services.css";
 
 function ArrowRightIcon() {
@@ -119,22 +120,22 @@ export default function Services() {
   return (
     <div className="services-page">
       <section className="services-hero">
-        <div className="services-hero__card">
-          <div className="services-hero__content">
+        <div className="services-hero-card">
+          <div className="services-hero-content">
             <span className="services-badge">Verified Community Pharmacy</span>
-            <h1 className="services-hero__title">
+            <h1 className="services-hero-title">
               Your Trusted Pharmacy for Expert Care &amp; Everyday Health
             </h1>
-            <p className="services-hero__subtitle">
+            <p className="services-hero-subtitle">
               From prescription fulfillment to personal health advice, we offer
               safe, reliable, and compassionate care for you and your family in
               Mbare.
             </p>
-            <a href="https://wa.me/263780035227" className="services-hero__btn">
+            <NavLink to="/contact" className="services-hero-btn">
               Visit or Contact Us
-            </a>
+            </NavLink>
           </div>
-          <div className="services-hero__image-wrapper">
+          <div className="services-hero-image-wrapper">
             <img
               src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800"
               alt="Pharmacist providing expert care"
@@ -155,9 +156,9 @@ export default function Services() {
                 src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600"
                 alt="Pharmacist consulting"
               />
-              <div className="quick-card__overlay">
+              <div className="quick-card-overlay">
                 <h3>Speak to a Pharmacist</h3>
-                <a href="tel:+263780035227" className="quick-card__link">
+                <a href="tel:+263780035227" className="quick-card-link">
                   Get On A Call <ArrowRightIcon />
                 </a>
               </div>
@@ -168,11 +169,11 @@ export default function Services() {
                 src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600"
                 alt="Blood pressure check"
               />
-              <div className="quick-card__overlay">
+              <div className="quick-card-overlay">
                 <h3>Health Checks</h3>
                 <a
                   href="https://wa.me/263780035227?text=Hi,%20I'd%20like%20to%20book%20a%20health%20check"
-                  className="quick-card__link"
+                  className="quick-card-link"
                 >
                   Book A Check <ArrowRightIcon />
                 </a>
@@ -184,11 +185,11 @@ export default function Services() {
                 src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600"
                 alt="Medications shelf"
               />
-              <div className="quick-card__overlay">
+              <div className="quick-card-overlay">
                 <h3>Get Your Medication</h3>
                 <a
                   href="https://wa.me/263780035227?text=Hi,%20I%20want%20to%20inquire%20about%20medication%20availability"
-                  className="quick-card__link"
+                  className="quick-card-link"
                 >
                   Inquire Stock <ArrowRightIcon />
                 </a>
@@ -205,12 +206,12 @@ export default function Services() {
           <div className="categories-grid">
             {DRUG_CATEGORIES.map((cat, idx) => (
               <div key={idx} className="category-card">
-                <div className="category-card__icon">
+                <div className="category-card-icon">
                   <PillIcon />
                 </div>
-                <div className="category-card__info">
-                  <h4 className="category-card__title">{cat.title}</h4>
-                  <span className="category-card__count">{cat.count}</span>
+                <div className="category-card-info">
+                  <h4 className="category-card-title">{cat.title}</h4>
+                  <span className="category-card-count">{cat.count}</span>
                 </div>
               </div>
             ))}
@@ -221,24 +222,24 @@ export default function Services() {
       <section className="services-education">
         <div className="services-container">
           <div className="education-card">
-            <div className="education-card__content">
-              <h2 className="education-card__title">Health Education</h2>
-              <p className="education-card__subtitle">
+            <div className="education-card-content">
+              <h2 className="education-card-title">Health Education</h2>
+              <p className="education-card-subtitle">
                 <strong>Stay informed. Make better health decisions.</strong>
               </p>
-              <p className="education-card__desc">
+              <p className="education-card-desc">
                 Get simple, reliable health advice and prescription guidelines
                 straight from our qualified pharmacists—from medication
                 management to daily routine wellness.
               </p>
               <a
                 href="https://wa.me/263780035227?text=Hi,%20I%20have%20a%20health%20question"
-                className="education-card__btn"
+                className="education-card-btn"
               >
                 Speak to a Pharmacist
               </a>
             </div>
-            <div className="education-card__image">
+            <div className="education-card-image">
               <img
                 src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800"
                 alt="Pharmacist educating patient"
@@ -288,7 +289,7 @@ export default function Services() {
                   className={`faq-item ${isOpen ? "faq-item--open" : ""}`}
                 >
                   <button
-                    className="faq-item__header"
+                    className="faq-item-header"
                     onClick={() => toggleFaq(idx)}
                     aria-expanded={isOpen}
                   >
@@ -296,7 +297,7 @@ export default function Services() {
                     <ChevronDownIcon />
                   </button>
                   {isOpen && (
-                    <div className="faq-item__body">
+                    <div className="faq-item-body">
                       <p>{faq.a}</p>
                     </div>
                   )}
@@ -314,20 +315,20 @@ export default function Services() {
           <div className="tips-grid">
             {HEALTH_TIPS.map((tip) => (
               <div key={tip.id} className="tip-card">
-                <div className="tip-card__image">
+                <div className="tip-card-image">
                   <img src={tip.img} alt={tip.title} />
-                  <span className="tip-card__tag">{tip.tag}</span>
+                  <span className="tip-card-tag">{tip.tag}</span>
                 </div>
-                <div className="tip-card__body">
-                  <h3 className="tip-card__title">{tip.title}</h3>
-                  <p className="tip-card__desc">{tip.desc}</p>
+                <div className="tip-card-body">
+                  <h3 className="tip-card-title">{tip.title}</h3>
+                  <p className="tip-card-desc">{tip.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="services-tips__action">
-            <a href="https://wa.me/263780035227" className="services-tips__btn">
+          <div className="services-tips-action">
+            <a href="https://wa.me/263780035227" className="services-tips-btn">
               See All Tips &amp; Updates
             </a>
           </div>

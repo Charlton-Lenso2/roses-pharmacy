@@ -132,22 +132,22 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer__main">
-        <div className="footer__grid">
-          <div className="footer__col footer__col--brand">
-            <div className="footer__brand">
-              <img src={roseMark} alt="" className="footer__mark" />
-              <span className="footer__wordmark">
+      <div className="footer-main">
+        <div className="footer-grid">
+          <div className="footer-col footer-col--brand">
+            <div className="footer-brand">
+              <img src={roseMark} alt="" className="footer-mark" />
+              <span className="footer-wordmark">
                 Roses <em>Pharmacy</em>
               </span>
             </div>
-            <p className="footer__tagline">
+            <p className="footer-tagline">
               Your trusted community pharmacy in Mbare National, Harare —
               providing quality medicines, professional pharmaceutical care, and
               personalised healthcare solutions for individuals and families.
             </p>
             <a
-              className="footer__whatsapp-pill"
+              className="footer-whatsapp-pill"
               href={`https://wa.me/${WHATSAPP_HREF}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -157,12 +157,12 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="footer__col">
-            <h4 className="footer__heading">Quick Links</h4>
-            <ul className="footer__list">
+          <div className="footer-col">
+            <h4 className="footer-heading">Quick Links</h4>
+            <ul className="footer-list">
               {QUICK_LINKS.map((link) => (
                 <li key={link.to}>
-                  <NavLink to={link.to} className="footer__link">
+                  <NavLink to={link.to} className="footer-link">
                     {link.label}
                   </NavLink>
                 </li>
@@ -170,12 +170,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer__col">
-            <h4 className="footer__heading">Our Services</h4>
-            <ul className="footer__list">
+          <div className="footer-col">
+            <h4 className="footer-heading">Our Services</h4>
+            <ul className="footer-list">
               {SERVICES.map((service) => (
                 <li key={service}>
-                  <NavLink to="/services" className="footer__link">
+                  <NavLink to="/services" className="footer-link">
                     {service}
                   </NavLink>
                 </li>
@@ -184,9 +184,9 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="footer__col">
-            <h4 className="footer__heading">Get In Touch</h4>
-            <ul className="footer__contact">
+          <div className="footer-col">
+            <h4 className="footer-heading">Get In Touch</h4>
+            <ul className="footer-contact">
               <li>
                 <PinIcon />
                 <span>2 Gwatidzo Street, Mbare National, Harare</span>
@@ -212,10 +212,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer__bottom">
-        <div className="footer__bottom-inner">
+      <div className="footer-bottom">
+        <div className="footer-bottom-inner">
           <p>&copy; {year} Roses Pharmacy. All rights reserved.</p>
-          <p className="footer__bottom-note">
+          <p className="footer-bottom-note">
             Mbare National, Harare, Zimbabwe
           </p>
         </div>
@@ -223,3 +223,4 @@ export default function Footer() {
     </footer>
   );
 }
+

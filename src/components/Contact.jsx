@@ -88,25 +88,25 @@ export default function Contact() {
   return (
     <div className="contact-page">
       <section className="contact-hero">
-        <div className="contact-hero__container">
-          <div className="contact-hero__image-col">
-            <div className="contact-hero__img-card">
+        <div className="contact-hero-container">
+          <div className="contact-hero-image-col">
+            <div className="contact-hero-img-card">
               <img
                 src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800"
                 alt="Pharmacist on duty"
               />
-              <div className="contact-hero__badge">
+              <div className="contact-hero-badge">
                 <span className="badge-dot"></span>
                 <span>Licensed Pharmacists Available</span>
               </div>
             </div>
           </div>
 
-          <div className="contact-hero__text-col">
-            <h1 className="contact-hero__title">
+          <div className="contact-hero-text-col">
+            <h1 className="contact-hero-title">
               Don't Let Your Health Take a Backseat!
             </h1>
-            <p className="contact-hero__subtitle">
+            <p className="contact-hero-subtitle">
               Fill out the form below to schedule a consultation or inquire
               about prescription availability with our healthcare professionals
               in Mbare.
@@ -116,7 +116,7 @@ export default function Contact() {
       </section>
 
       <section className="contact-main">
-        <div className="contact-main__container">
+        <div className="contact-main-container">
           {/* Form Column */}
           <div className="contact-form-col">
             <h2 className="contact-section-title">Inquiry / Appointment</h2>
@@ -243,15 +243,15 @@ export default function Contact() {
           <div className="contact-info-col">
             <h2 className="contact-section-title">Contact Info</h2>
 
-            <div className="contact-info__card">
-              <div className="contact-info__image">
+            <div className="contact-info-card">
+              <div className="contact-info-image">
                 <img
                   src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600"
                   alt="Roses Pharmacy staff member"
                 />
               </div>
 
-              <div className="contact-info__list">
+              <div className="contact-info-list">
                 <div className="info-item">
                   <h4>Phone</h4>
                   <p>
@@ -288,8 +288,8 @@ export default function Contact() {
       </section>
 
       <section className="contact-newsletter">
-        <div className="contact-newsletter__container">
-          <div className="contact-newsletter__card">
+        <div className="contact-newsletter-container">
+          <div className="contact-newsletter-card">
             <div className="newsletter-text">
               <h2>Be Our Subscriber</h2>
               <p>
@@ -316,3 +316,4 @@ export default function Contact() {
     </div>
   );
 }
+

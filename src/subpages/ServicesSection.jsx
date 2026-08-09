@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./ServicesSection.css";
 
 const SERVICES_DATA = [
@@ -130,9 +131,9 @@ const ServicesSection = () => {
               <div className="service-icon">{service.icon}</div>
               <h3 className="service-card-title">{service.title}</h3>
               <p className="service-card-desc">{service.description}</p>
-              <a href="#contact" className="service-link">
+              <NavLink to="/contact" className="service-link">
                 Learn More <span>&rarr;</span>
-              </a>
+              </NavLink>
             </div>
           ))}
         </div>

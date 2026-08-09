@@ -8,7 +8,7 @@
   padding: 60px 24px;
 }
 
-.contact-hero__container {
+.contact-hero-container {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.contact-hero__img-card {
+.contact-hero-img-card {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
@@ -25,14 +25,14 @@
   max-height: 420px;
 }
 
-.contact-hero__img-card img {
+.contact-hero-img-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.contact-hero__badge {
+.contact-hero-badge {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -56,7 +56,7 @@
   border-radius: 50%;
 }
 
-.contact-hero__title {
+.contact-hero-title {
   font-family: var(--font-body);
   font-size: clamp(2.4rem, 4vw, 3rem);
   line-height: 1.08;
@@ -64,7 +64,7 @@
   margin-bottom: 16px;
 }
 
-.contact-hero__subtitle {
+.contact-hero-subtitle {
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--ink-soft);
@@ -75,7 +75,7 @@
   padding: 80px 24px;
 }
 
-.contact-main__container {
+.contact-main-container {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
@@ -185,7 +185,7 @@
   transform: translateY(-2px);
 }
 
-.contact-info__card {
+.contact-info-card {
   background-color: var(--white);
   border-radius: 28px;
   padding: 0;
@@ -194,21 +194,21 @@
   overflow: hidden;
 }
 
-.contact-info__image {
+.contact-info-image {
   border-radius: 0;
   overflow: hidden;
   height: 240px;
   margin-bottom: 0;
 }
 
-.contact-info__image img {
+.contact-info-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.contact-info__list {
+.contact-info-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -243,12 +243,12 @@
   padding: 40px 24px 0;
 }
 
-.contact-newsletter__container {
+.contact-newsletter-container {
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-.contact-newsletter__card {
+.contact-newsletter-card {
   background-color: var(--white);
   border-radius: 28px;
   padding: 48px;
@@ -336,13 +336,13 @@
 }
 
 @media (max-width: 992px) {
-  .contact-hero__container,
-  .contact-main__container {
+  .contact-hero-container,
+  .contact-main-container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .contact-newsletter__card {
+  .contact-newsletter-card {
     flex-direction: column;
     text-align: center;
     padding: 36px 24px;
@@ -355,7 +355,7 @@
 }
 
 @media (max-width: 640px) {
-  .contact-hero__title {
+  .contact-hero-title {
     font-size: 2rem;
   }
 
@@ -383,3 +383,4 @@
     justify-content: center;
   }
 }
+

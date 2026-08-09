@@ -50,60 +50,49 @@ function WhatsAppIcon() {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    if (scrolled) {
-      setMenuOpen(false);
-    }
     return () => {
       document.body.style.overflow = "";
     };
-  }, [menuOpen, scrolled]);
+  }, [menuOpen]);
 
   return (
-    <header className={`navbar-wrap ${scrolled ? "is-scrolled" : ""}`}>
+    <header className="navbar-wrap">
       <nav className="navbar" aria-label="Primary navigation">
-        <div className="navbar__inner">
+        <div className="navbar-inner">
           <NavLink
             to="/"
-            className="navbar__brand"
+            className="navbar-brand"
             onClick={() => setMenuOpen(false)}
           >
-            <img src={roseMark} alt="" className="navbar__mark" />
-            <span className="navbar__wordmark">
+            <img src={roseMark} alt="" className="navbar-mark" />
+            <span className="navbar-wordmark">
               Roses <em>Pharmacy</em>
             </span>
           </NavLink>
 
-          <ul className="navbar__links">
+          <ul className="navbar-links">
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
-                    `navbar__link ${isActive ? "is-active" : ""}`
+                    `navbar-link ${isActive ? "is-active" : ""}`
                   }
                   onClick={() => setMenuOpen(false)}
                 >
-                  <span className="navbar__link-bloom" aria-hidden="true" />
+                  <span className="navbar-link-bloom" aria-hidden="true" />
                   {link.label}
                 </NavLink>
               </li>
             ))}
           </ul>
 
-          <div className="navbar__actions">
+          <div className="navbar-actions">
             <a
-              className="navbar__whatsapp"
+              className="navbar-whatsapp"
               href={`https://wa.me/${WHATSAPP_HREF}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -111,7 +100,7 @@ export default function Navbar() {
             >
               <WhatsAppIcon />
             </a>
-            <a className="navbar__cta" href={`tel:${PHONE_PRIMARY_HREF}`}>
+            <a className="navbar-cta" href={`tel:${PHONE_PRIMARY_HREF}`}>
               <PhoneIcon />
               <span>Call Now</span>
             </a>
@@ -119,7 +108,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className={`navbar__burger ${menuOpen ? "is-open" : ""}`}
+            className={`navbar-burger ${menuOpen ? "is-open" : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
@@ -131,14 +120,14 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <div className={`navbar__mobile ${menuOpen ? "is-open" : ""}`}>
-        <ul className="navbar__mobile-links">
+      <div className={`navbar-mobile ${menuOpen ? "is-open" : ""}`}>
+        <ul className="navbar-mobile-links">
           {NAV_LINKS.map((link, index) => (
             <li key={link.to} style={{ transitionDelay: `${index * 40}ms` }}>
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `navbar__mobile-link ${isActive ? "is-active" : ""}`
+                  `navbar-mobile-link ${isActive ? "is-active" : ""}`
                 }
                 onClick={() => setMenuOpen(false)}
               >
@@ -148,30 +137,30 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="navbar__mobile-info">
+        <div className="navbar-mobile-info">
           <a
             href={`tel:${PHONE_PRIMARY_HREF}`}
-            className="navbar__mobile-info-item"
+            className="navbar-mobile-info-item"
           >
             <PhoneIcon /> {PHONE_PRIMARY}
           </a>
-          <span className="navbar__mobile-info-item">
+          <span className="navbar-mobile-info-item">
             Open Daily · 8:00 AM - 8:00 PM
           </span>
-          <span className="navbar__mobile-info-item">
+          <span className="navbar-mobile-info-item">
             2 Gwatidzo Street, Mbare National, Harare
           </span>
         </div>
 
-        <div className="navbar__mobile-actions">
+        <div className="navbar-mobile-actions">
           <a
-            className="navbar__cta navbar__cta--block"
+            className="navbar-cta navbar-cta--block"
             href={`tel:${PHONE_PRIMARY_HREF}`}
           >
             <PhoneIcon /> Call Now
           </a>
           <a
-            className="navbar__whatsapp-block"
+            className="navbar-whatsapp-block"
             href={`https://wa.me/${WHATSAPP_HREF}`}
             target="_blank"
             rel="noopener noreferrer"
