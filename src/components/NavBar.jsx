@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import "./NavBar.css";
 import roseMark from "../assets/rose-mark.png";
 
 const NAV_LINKS = [
